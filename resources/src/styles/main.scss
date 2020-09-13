@@ -1,0 +1,31 @@
+@import './mixins';
+
+.status {
+    font-weight: 700;
+
+    &.-idle {
+        color: #000;
+    }
+
+    &.-processing {
+        color: #5e8e4a;
+    }
+}
+
+.form-control {
+    margin: 10px 0 10px 0;
+
+    label {
+        display: block;
+    }
+
+    input {
+        display: block;
+        width: 100%;
+    }
+
+    textarea {
+        height: 250px;
+        width: 100%;
+    }
+}

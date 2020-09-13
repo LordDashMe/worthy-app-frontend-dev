@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Worthy App</title>
+        <meta name="description" content="The Worthy App Frontend mainly focused for developer." />
+        <link rel="canonical" href="/" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link rel="preload" href="./resources/dist/styles/global.min.css" as="style">
+        <link rel="preload" href="./resources/dist/styles/main.min.css" as="style">
+        <link rel="preload" href="./resources/dist/scripts/main.min.js" as="style">
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="./resources/dist/styles/global.min.css">
+        <link rel="stylesheet" href="./resources/dist/styles/main.min.css">
+    </head>
+    <body class="container">
+        
+        <h1>Worthy App Frontend Dev</h1>
+
+        <p id="status" class="status -idle">IDLE</p>
+
+        <div class="section">
+            <h2>Auth</h2>
+            <div class="form-control">
+                <label>Username:</label>
+                <input type="text" id="username" />
+            </div>
+            <div class="form-control">
+                <label>Password:</label>
+                <input type="password" id="password" />
+            </div>
+            <div class="form-control">
+                <label>Token:</label>
+                <input type="text" id="token" disabled />
+            </div>
+            <div class="form-control">
+                <button id="get_token">GET TOKEN</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Source</h2>
+            <div class="form-control">
+                <label>System Name:</label>
+                <input type="text" id="data_source_system_name" />
+            </div>
+            <div class="form-control">
+                <label>Available Action(s):</label>
+                <button id="set_create_action">SET CREATE ACTION</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Data Source Action</h2>
+            <div class="form-control">
+                <label>Current Data Source:</label>
+                <input type="text" id="current_data_source" disabled />
+            </div>
+            <div class="form-control">
+                <label>Current Action:</label>
+                <input type="text" id="current_action" disabled />
+            </div>
+            <div class="form-control">
+                <label>Details</label>
+                <textarea type="text" id="details"></textarea>
+            </div>
+            <div class="form-control">
+                <button id="commit_action">COMMIT</button>
+            </div>
+        </div>
+        <script src="./resources/dist/scripts/main.min.js" type="text/javascript"></script>
+    </body>
+</html>
