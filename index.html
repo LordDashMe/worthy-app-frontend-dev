@@ -17,10 +17,17 @@
     </head>
     <body class="container">
         
-        <h1>Worthy App Frontend Dev</h1>
+        <h1>Worthy App - Frontend Developer's Version.</h1>
 
-        <p id="status" class="status -idle">IDLE</p>
+        <!-- LOGS -->
+        <div class="section">
+            <h2>Logs</h2>
+            <div class="form-control">
+                <textarea id="logs" disabled></textarea>
+            </div>
+        </div>
 
+        <!-- AUTH -->
         <div class="section">
             <h2>Auth</h2>
             <div class="form-control">
@@ -40,6 +47,7 @@
             </div>
         </div>
 
+        <!-- DATA SOURCE -->
         <div class="section">
             <h2>Data Source</h2>
             <div class="form-control">
@@ -47,11 +55,12 @@
                 <input type="text" id="data_source_system_name" />
             </div>
             <div class="form-control">
-                <label>Available Action(s):</label>
+                <p>Available Action(s):</p>
                 <button id="set_create_action">SET CREATE ACTION</button>
             </div>
         </div>
 
+        <!-- DATA SOURCE ACTION -->
         <div class="section">
             <h2>Data Source Action</h2>
             <div class="form-control">
@@ -63,13 +72,15 @@
                 <input type="text" id="current_action" disabled />
             </div>
             <div class="form-control">
-                <label>Details</label>
+                <label>Details:</label>
                 <textarea type="text" id="details"></textarea>
             </div>
             <div class="form-control">
+                <p id="status">[IDLE]</p>
                 <button id="commit_action">COMMIT</button>
             </div>
         </div>
+
         <script src="./resources/dist/scripts/main.min.js" type="text/javascript"></script>
     </body>
 </html>
