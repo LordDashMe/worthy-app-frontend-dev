@@ -68,7 +68,7 @@
 
             alert(result.message);
             console.error(result.message);
-            setLogs('DONE');
+            setLogs('ERROR: ' + result.message);
         
         });
 
