@@ -2,17 +2,14 @@
   "name": "worthy-app-frontend-dev",
   "version": "1.0.0",
   "description": "The Worthy App Frontend mainly focused for developer.",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "clean": "gulp clean",
     "build": "gulp build",
-    "watch": "gulp watch",
+    "build:clean": "gulp clean",
+    "build:watch": "gulp watch",
     "build:styles": "gulp styles",
     "build:scripts": "gulp scripts"
   },
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
