@@ -1,3 +1,11 @@
+/**
+ * Gulp Main Config Setup.
+ * Reference: https://github.com/gulpjs/gulp#sample-gulpfilejs
+ * Github: https://github.com/gulpjs/gulp
+ * 
+ * @author Joshua Clifford Reyes<joshua.reyes@gmanmi.com>
+ */
+var del = require('del');
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var babel = require('gulp-babel');
@@ -5,7 +13,6 @@ var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var cleanCSS = require('gulp-clean-css');
 var autoPrefixer = require('gulp-autoprefixer');
-var del = require('del');
 
 var paths = {
     styles: {
