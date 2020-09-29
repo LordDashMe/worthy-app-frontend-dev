@@ -7,19 +7,19 @@
         <meta name="description" content="The Worthy App Frontend mainly focused for developer." />
         <link rel="canonical" href="/" />
 
-        <link rel="preload" href="./resources/dist/styles/global.min.css" as="style">
-        <link rel="preload" href="./resources/dist/styles/main.min.css" as="style">
+        <link rel="preload" href="./resources/dist/styles/global.min.css?v=0.0.2" as="style">
+        <link rel="preload" href="./resources/dist/styles/main.min.css?v=0.0.2" as="style">
         
-        <link rel="preload" href="./resources/dist/scripts/main.min.js" as="script">
+        <link rel="preload" href="./resources/dist/scripts/main.min.js?v=0.0.2" as="script">
 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="./resources/dist/styles/global.min.css">
-        <link rel="stylesheet" href="./resources/dist/styles/main.min.css">
+        <link rel="stylesheet" href="./resources/dist/styles/global.min.css?v=0.0.2">
+        <link rel="stylesheet" href="./resources/dist/styles/main.min.css?v=0.0.2">
     </head>
     <body class="container">
         
-        <h1>Worthy App - Frontend Developer's Version.</h1>
+        <h1>Worthy App - Frontend Developer's Version. <span class="app-version">v0.0.2</span></h1>
 
         <!-- LOGS -->
         <div class="section">
@@ -58,7 +58,8 @@
             </div>
             <div class="form-control">
                 <p>Available Action(s):</p>
-                <button id="set_create_action">SET CREATE ACTION</button>
+                <!-- <button id="set_get_action">GET</button> -->
+                <button id="set_post_action">POST</button>
             </div>
         </div>
 
@@ -66,16 +67,20 @@
         <div class="section">
             <h2>Data Source Action</h2>
             <div class="form-control">
-                <label>Current Data Source:</label>
-                <input type="text" id="current_data_source" disabled />
+                <label>URL:</label>
+                <input type="text" id="data_source_url" disabled />
             </div>
             <div class="form-control">
-                <label>Current Action:</label>
-                <input type="text" id="current_action" disabled />
+                <label>Action:</label>
+                <input type="text" id="data_source_action" disabled />
             </div>
             <div class="form-control">
-                <label>Details:</label>
-                <textarea type="text" id="details"></textarea>
+                <label>Body:</label>
+                <textarea id="data_source_body"></textarea>
+            </div>
+            <div class="form-control">
+                <label>Output:</label>
+                <textarea id="data_source_output" disabled></textarea>
             </div>
             <div class="form-control">
                 <p id="status">[IDLE]</p>
@@ -83,6 +88,6 @@
             </div>
         </div>
 
-        <script src="./resources/dist/scripts/main.min.js" type="text/javascript"></script>
+        <script src="./resources/dist/scripts/main.min.js?v=0.0.2" type="text/javascript"></script>
     </body>
 </html>

@@ -1,0 +1,12 @@
+version: '3.4'
+services:
+  resources:
+    tty: true
+    stdin_open: true
+    image: 'node:10-alpine'
+    volumes:
+      - './resources:/var/www/resources/'
+networks:
+  default:
+    external:
+      name: 'development-network'
