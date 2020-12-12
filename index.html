@@ -7,19 +7,19 @@
         <meta name="description" content="The Worthy App Frontend mainly focused for developer." />
         <link rel="canonical" href="/" />
 
-        <link rel="preload" href="./resources/dist/styles/global.min.css?v=0.0.2" as="style">
-        <link rel="preload" href="./resources/dist/styles/main.min.css?v=0.0.2" as="style">
+        <link rel="preload" href="./resources/dist/styles/global.min.css?v=0.0.3" as="style">
+        <link rel="preload" href="./resources/dist/styles/main.min.css?v=0.0.3" as="style">
         
-        <link rel="preload" href="./resources/dist/scripts/main.min.js?v=0.0.2" as="script">
+        <link rel="preload" href="./resources/dist/scripts/main.min.js?v=0.0.3" as="script">
 
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" href="./resources/dist/styles/global.min.css?v=0.0.2">
-        <link rel="stylesheet" href="./resources/dist/styles/main.min.css?v=0.0.2">
+        <link rel="stylesheet" href="./resources/dist/styles/global.min.css?v=0.0.3">
+        <link rel="stylesheet" href="./resources/dist/styles/main.min.css?v=0.0.3">
     </head>
     <body class="container">
         
-        <h1>Worthy App - Frontend Developer's Version. <span class="app-version">v0.0.2</span></h1>
+        <h1>Worthy App - Frontend Developer's Version. <span class="app-version">v0.0.3</span></h1>
 
         <!-- LOGS -->
         <div class="section">
@@ -58,7 +58,7 @@
             </div>
             <div class="form-control">
                 <p>Available Action(s):</p>
-                <!-- <button id="set_get_action">GET</button> -->
+                <button id="set_get_action">GET</button>
                 <button id="set_post_action">POST</button>
             </div>
         </div>
@@ -68,13 +68,13 @@
             <h2>Data Source Action</h2>
             <div class="form-control">
                 <label>URL:</label>
-                <input type="text" id="data_source_url" disabled />
+                <input type="text" id="data_source_url" />
             </div>
             <div class="form-control">
                 <label>Action:</label>
                 <input type="text" id="data_source_action" disabled />
             </div>
-            <div class="form-control">
+            <div id="data_source_form_body" class="form-control" hidden>
                 <label>Body:</label>
                 <textarea id="data_source_body"></textarea>
             </div>
@@ -88,6 +88,6 @@
             </div>
         </div>
 
-        <script src="./resources/dist/scripts/main.min.js?v=0.0.2" type="text/javascript"></script>
+        <script src="./resources/dist/scripts/main.min.js?v=0.0.3" type="text/javascript"></script>
     </body>
 </html>

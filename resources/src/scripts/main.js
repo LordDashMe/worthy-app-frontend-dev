@@ -3,9 +3,20 @@
     var API_URL_CONFIG = {
         source: 'https://worthy-app-backend.herokuapp.com',
         auth: '/user/login',
-        data_source: '/data-source', 
-        data_source_entry: '/data-source/entry'
+        data_source: '/data-source'
     };
+
+    var getDataSourceURL = function (systemName) {
+        return API_URL_CONFIG.data_source + '/' + systemName;   
+    };
+
+    var getDataSourceEntriesURL = function (systemName) {
+        return API_URL_CONFIG.data_source + '/' + systemName + '/entries';
+    };
+
+    var getDataSourceEntryURL = function () {
+        return API_URL_CONFIG.data_source + '/entry';
+    }
 
     var bumpAlert = function () {
         alert('Done, please check logs for more info.');
@@ -64,6 +75,8 @@
 
             error.json().then(function (result) {
 
+                document.getElementById('data_source_output').value = result.message;
+
                 alert(result.message);
                 console.error(result.message);
                 setLogs('ERROR: ' + result.message);
@@ -111,53 +124,81 @@
         var token = document.getElementById('token').value;
         var systemName = document.getElementById('data_source_system_name').value;
 
-        setLogs('LOADING DATA SOURCE: ' + systemName);
+        setLogs('LOADING DATA SOURCE: ' + systemName + ' with action ' + action);
 
-        var options = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json', 
-                'X-WORTHY-APP-HEADER': 1,
-                'X-WORTHY-APP-JWT': token
-            }
+        var postActionResponse = function () {
+
+            document.getElementById('data_source_form_body').hidden = false;
+
+            document.getElementById('data_source_url').value = API_URL_CONFIG.source + getDataSourceEntryURL();
+            document.getElementById('data_source_action').value = action;
+
+            var url = API_URL_CONFIG.source + getDataSourceURL(systemName);
+
+            var options = {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json', 
+                    'X-WORTHY-APP-HEADER': 1,
+                    'X-WORTHY-APP-JWT': token
+                }
+            };
+
+            fetch(url, options)
+                .then(fetchResponseHandler)
+                .then(function (result) {
+
+                    bumpAlert();
+
+                    var fields = {};
+
+                    for (var x in result.fields) {
+                        fields[result.fields[x]['systemName']] = defaultValueBasedOnDataType(result.fields[x]['dataType']);
+                    }
+
+                    document.getElementById('data_source_body').value = JSON.stringify({
+                        'systemName': systemName,
+                        'fields': fields
+                    }, null, 4);
+
+                    setLogs('DONE');
+                })
+                .catch(fetchErrorHandler);
+
         };
 
-        var url = API_URL_CONFIG.source + API_URL_CONFIG.data_source + '/' + systemName;
+        var getActionResponse = function () {
 
-        fetch(url, options)
-            .then(fetchResponseHandler)
-            .then(function (result) {
+            document.getElementById('data_source_form_body').hidden = true;
 
-                bumpAlert();
-            
-                document.getElementById('data_source_url').value = url;
-                document.getElementById('data_source_action').value = action;
+            document.getElementById('data_source_url').value = API_URL_CONFIG.source + getDataSourceEntriesURL(systemName);
+            document.getElementById('data_source_action').value = action;
 
-                var fields = {};
+        };
 
-                for (var x in result.fields) {
-                    fields[result.fields[x]['systemName']] = defaultValueBasedOnDataType(result.fields[x]['dataType']);
-                }
-
-                document.getElementById('data_source_body').value = JSON.stringify({
-                    'systemName': systemName,
-                    'fields': fields
-                }, null, 4); 
-
-                setLogs('DONE');
-            })
-            .catch(fetchErrorHandler);
+        if (action === 'POST') {
+            postActionResponse();
+        } else if (action === 'GET') {
+            getActionResponse();
+        }
 
     };
 
     var handleCommit = function () {
 
         var token = document.getElementById('token').value;
+
+        var dataSourceUrl = document.getElementById('data_source_url').value;
         var dataSourceAction = document.getElementById('data_source_action').value;
+
         var dataSourceBody = document.getElementById('data_source_body').value;
 
         setLogs('EXECUTING COMMIT');
-        setLogs(dataSourceBody);
+
+        if (dataSourceAction === 'POST') {
+            setLogs(dataSourceBody);
+        }
+        
         setStatus('PROCESSING');
 
         var options = {
@@ -173,7 +214,7 @@
             options['body'] = dataSourceBody;
         }
 
-        fetch(API_URL_CONFIG.source + API_URL_CONFIG.data_source_entry, options)
+        fetch(dataSourceUrl, options)
             .then(fetchResponseHandler)
             .then(function (result) {
                 bumpAlert();
@@ -188,6 +229,7 @@
 
     // EVENT BINDINGS
     document.getElementById('get_token').addEventListener('click', handleAuthAction);
+    document.getElementById('set_get_action').addEventListener('click', handleDataSource.bind(this, 'GET'));
     document.getElementById('set_post_action').addEventListener('click', handleDataSource.bind(this, 'POST'));
     document.getElementById('commit_action').addEventListener('click', handleCommit);
 
