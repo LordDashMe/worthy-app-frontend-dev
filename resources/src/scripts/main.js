@@ -1,7 +1,7 @@
 (function () {
 
     var API_URL_CONFIG = {
-        source: 'https://worthy-app-backend.herokuapp.com',
+        source: 'https://worthy-app-backend-h20.herokuapp.com',
         auth: '/user/login',
         data_source: '/data-source'
     };
