@@ -8,6 +8,8 @@ services:
     image: 'node:16-alpine'
     volumes:
       - './resources:/var/www/resources/'
+    networks:
+      - default
 
 networks:
   default: 
