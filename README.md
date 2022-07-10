@@ -4,6 +4,8 @@ The Worthy App Frontend mainly focused for developer.
 
 ## Requirements
 
+- Python 3 or latest.
+
 - Node.js 16 or latest.
 
 ## Usage
