@@ -1,9 +1,6 @@
 {
-  "name": "worthy-app-frontend-dev",
-  "version": "1.0.0",
-  "description": "The Worthy App Frontend mainly focused for developer.",
+  "name": "worthy-app-frontend-dev-resources",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
     "build:clean": "gulp clean",
     "build:watch": "gulp watch",
@@ -11,17 +8,17 @@
     "build:scripts": "gulp scripts"
   },
   "devDependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "del": "^5.1.0",
+    "@babel/core": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "del": "^6.1.1",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
+    "gulp-autoprefixer": "^8.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
-    "node-sass": "^4.14.1"
+    "node-sass": "^7.0.1"
   },
   "browserslist": [
     "> 0.25%, not dead",

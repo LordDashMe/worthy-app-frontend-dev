@@ -1,12 +1,14 @@
-version: '3.4'
+version: '3.9'
+
 services:
   resources:
+    container_name: 'worthy-app-frontend-dev-resources'
     tty: true
     stdin_open: true
-    image: 'node:10-alpine'
+    image: 'node:16-alpine'
     volumes:
       - './resources:/var/www/resources/'
+
 networks:
-  default:
-    external:
-      name: 'development-network'
+  default: 
+    name: 'worthy-app-frontend-dev-resources_network'
