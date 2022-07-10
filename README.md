@@ -8,6 +8,8 @@ The Worthy App Frontend mainly focused for developer.
 
 ## Usage
 
+- Production Link: <https://lorddashme.github.io/worthy-app-frontend-dev/>
+
 ### Install
 
 - Install the python by running the command ```apk add --no-cache python3 py3-pip make g++ && ln -sf python3 /usr/bin/python```.
