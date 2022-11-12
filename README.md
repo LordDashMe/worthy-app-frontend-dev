@@ -4,7 +4,7 @@ The Worthy App Frontend mainly focused for developer.
 
 ## Requirements
 
-- `node:16 < latest`
+- Starting from `node:16` up to the latest
 
 ## Usage
 
