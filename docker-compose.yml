@@ -1,5 +1,4 @@
 version: '3.9'
-
 services:
   resources:
     container_name: 'worthy-app-frontend-dev-resources'
@@ -10,7 +9,6 @@ services:
       - './resources:/var/www/resources/'
     networks:
       - default
-
 networks:
   default: 
     name: 'worthy-app-frontend-dev-resources_network'

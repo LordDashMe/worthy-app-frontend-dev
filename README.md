@@ -4,16 +4,22 @@ The Worthy App Frontend mainly focused for developer.
 
 ## Requirements
 
-- Python 3 or latest.
-
-- Node.js 16 or latest.
+- `node:16` or latest
 
 ## Usage
 
 - Production Link: <https://lorddashme.github.io/worthy-app-frontend-dev/>
 
-### Install
+### Setup
 
-- Install the python by running the command ```apk add --no-cache python3 py3-pip make g++ && ln -sf python3 /usr/bin/python```.
+- (Optional) When using the alpine version of the docker compose file we need to run the command below:
 
-- To prepare the resources run the command ```npm install --unsafe-perm```.
+  ```sh
+  apk add --no-cache python3 py3-pip make g++ && ln -sf python3 /usr/bin/python
+  ```
+
+- To prepare the resources run the command:
+
+  ```sh
+  npm install --unsafe-perm
+  ```

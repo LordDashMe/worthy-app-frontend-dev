@@ -1,93 +1,83 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <title>Worthy App</title>
-        <meta name="description" content="The Worthy App Frontend mainly focused for developer." />
-        <link rel="canonical" href="/" />
-
-        <link rel="preload" href="./resources/dist/styles/global.min.css?v=0.1.0" as="style">
-        <link rel="preload" href="./resources/dist/styles/main.min.css?v=0.1.0" as="style">
-        
-        <link rel="preload" href="./resources/dist/scripts/main.min.js?v=0.1.0" as="script">
-
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-        <link rel="stylesheet" href="./resources/dist/styles/global.min.css?v=0.1.0">
-        <link rel="stylesheet" href="./resources/dist/styles/main.min.css?v=0.1.0">
-    </head>
-    <body class="container">
-        
-        <h1>Worthy App - Frontend Developer's Version. <span class="app-version">v0.1.0</span></h1>
-
-        <!-- LOGS -->
-        <div class="section">
-            <h2>Logs</h2>
-            <div class="form-control">
-                <textarea id="logs" disabled></textarea>
-            </div>
-        </div>
-
-        <!-- AUTH -->
-        <div class="section">
-            <h2>Auth</h2>
-            <div class="form-control">
-                <label>Username:</label>
-                <input type="text" id="username" />
-            </div>
-            <div class="form-control">
-                <label>Password:</label>
-                <input type="password" id="password" />
-            </div>
-            <div class="form-control">
-                <label>Token:</label>
-                <input type="text" id="token" disabled />
-            </div>
-            <div class="form-control">
-                <button id="get_token">GET TOKEN</button>
-            </div>
-        </div>
-
-        <!-- DATA SOURCE -->
-        <div class="section">
-            <h2>Data Source</h2>
-            <div class="form-control">
-                <label>System Name:</label>
-                <input type="text" id="data_source_system_name" />
-            </div>
-            <div class="form-control">
-                <p>Available Action(s):</p>
-                <button id="set_get_action">GET</button>
-                <button id="set_post_action">POST</button>
-            </div>
-        </div>
-
-        <!-- DATA SOURCE ACTION -->
-        <div class="section">
-            <h2>Data Source Action</h2>
-            <div class="form-control">
-                <label>URL:</label>
-                <input type="text" id="data_source_url" />
-            </div>
-            <div class="form-control">
-                <label>Action:</label>
-                <input type="text" id="data_source_action" disabled />
-            </div>
-            <div id="data_source_form_body" class="form-control" hidden>
-                <label>Body:</label>
-                <textarea id="data_source_body"></textarea>
-            </div>
-            <div class="form-control">
-                <label>Output:</label>
-                <textarea id="data_source_output" disabled></textarea>
-            </div>
-            <div class="form-control">
-                <p id="status">[IDLE]</p>
-                <button id="commit_action">COMMIT</button>
-            </div>
-        </div>
-
-        <script src="./resources/dist/scripts/main.min.js?v=0.1.0" type="text/javascript"></script>
-    </body>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Worthy App</title>
+    <meta name="description" content="The Worthy App Frontend mainly focused for developer." />
+    <link rel="canonical" href="/" />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="./resources/dist/styles/global.min.css?v=0.2.0" as="style">
+    <link rel="preload" href="./resources/dist/styles/main.min.css?v=0.2.0" as="style">
+    <link rel="preload" href="./resources/dist/scripts/main.min.js?v=0.2.0" as="script">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/dist/styles/global.min.css?v=0.2.0">
+    <link rel="stylesheet" href="./resources/dist/styles/main.min.css?v=0.2.0">
+  </head>
+  <body class="container">
+    <h1>Worthy App - Frontend Developer's Version. <span class="app-version">v0.2.0</span></h1>
+    <!-- LOGS -->
+    <div class="section">
+      <h2>Logs</h2>
+      <div class="form-control">
+        <textarea id="logs" disabled></textarea>
+      </div>
+    </div>
+    <!-- AUTH -->
+    <div class="section">
+      <h2>Auth</h2>
+      <div class="form-control">
+        <label>Username:</label>
+        <input type="text" id="username" />
+      </div>
+      <div class="form-control">
+        <label>Password:</label>
+        <input type="password" id="password" />
+      </div>
+      <div class="form-control">
+        <label>Token:</label>
+        <input type="text" id="token" disabled />
+      </div>
+      <div class="form-control">
+        <button id="get_token">GET TOKEN</button>
+      </div>
+    </div>
+    <!-- DATA SOURCE -->
+    <div class="section">
+      <h2>Data Source</h2>
+      <div class="form-control">
+        <label>System Name:</label>
+        <input type="text" id="data_source_system_name" />
+      </div>
+      <div class="form-control">
+        <p>Available Action(s):</p>
+        <button id="set_get_action">GET</button>
+        <button id="set_post_action">POST</button>
+      </div>
+    </div>
+    <!-- DATA SOURCE ACTION -->
+    <div class="section">
+      <h2>Data Source Action</h2>
+      <div class="form-control">
+        <label>URL:</label>
+        <input type="text" id="data_source_url" />
+      </div>
+      <div class="form-control">
+        <label>Action:</label>
+        <input type="text" id="data_source_action" disabled />
+      </div>
+      <div id="data_source_form_body" class="form-control" hidden>
+        <label>Body:</label>
+        <textarea id="data_source_body"></textarea>
+      </div>
+      <div class="form-control">
+        <label>Output:</label>
+        <textarea id="data_source_output" disabled></textarea>
+      </div>
+      <div class="form-control">
+        <p id="status">[IDLE]</p>
+        <button id="commit_action">COMMIT</button>
+      </div>
+    </div>
+    <script src="./resources/dist/scripts/main.min.js?v=0.2.0" type="text/javascript"></script>
+  </body>
 </html>
