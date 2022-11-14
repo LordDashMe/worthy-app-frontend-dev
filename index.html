@@ -5,16 +5,18 @@
     <title>Worthy App</title>
     <meta name="description" content="The Worthy App Frontend mainly focused for developer." />
     <link rel="canonical" href="/" />
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" as="style">
-    <link rel="preload" href="./resources/dist/styles/global.min.css?v=0.2.0" as="style">
-    <link rel="preload" href="./resources/dist/styles/main.min.css?v=0.2.0" as="style">
-    <link rel="preload" href="./resources/dist/scripts/main.min.js?v=0.2.0" as="script">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./resources/dist/styles/global.min.css?v=0.2.0">
-    <link rel="stylesheet" href="./resources/dist/styles/main.min.css?v=0.2.0">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link rel="preload" href="./resources/dist/styles/global.min.css?v=1.0.0" as="style">
+    <link rel="preload" href="./resources/dist/styles/main.min.css?v=1.0.0" as="style">
+    <link rel="preload" href="./resources/dist/scripts/main.min.js?v=1.0.0" as="script">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./resources/dist/styles/global.min.css?v=1.0.0">
+    <link rel="stylesheet" href="./resources/dist/styles/main.min.css?v=1.0.0">
   </head>
   <body class="container">
-    <h1>Worthy App - Frontend Developer's Version. <span class="app-version">v0.2.0</span></h1>
+    <h1>Worthy App - Frontend Developer's Version. <span class="app-version">v1.0.0</span></h1>
+    <p>This current version of UI is using the version of WorthyApp@1.0.0</p>
+    <hr />
     <!-- LOGS -->
     <div class="section">
       <h2>Logs</h2>
@@ -22,9 +24,10 @@
         <textarea id="logs" disabled></textarea>
       </div>
     </div>
+    <hr />
     <!-- AUTH -->
     <div class="section">
-      <h2>Auth</h2>
+      <h2>Login</h2>
       <div class="form-control">
         <label>Username:</label>
         <input type="text" id="username" />
@@ -41,6 +44,7 @@
         <button id="get_token">GET TOKEN</button>
       </div>
     </div>
+    <hr />
     <!-- DATA SOURCE -->
     <div class="section">
       <h2>Data Source</h2>
@@ -54,6 +58,7 @@
         <button id="set_post_action">POST</button>
       </div>
     </div>
+    <hr />
     <!-- DATA SOURCE ACTION -->
     <div class="section">
       <h2>Data Source Action</h2>
@@ -78,6 +83,7 @@
         <button id="commit_action">COMMIT</button>
       </div>
     </div>
-    <script src="./resources/dist/scripts/main.min.js?v=0.2.0" type="text/javascript"></script>
+    <hr />
+    <script src="./resources/dist/scripts/main.min.js?v=1.0.0" type="text/javascript"></script>
   </body>
 </html>
