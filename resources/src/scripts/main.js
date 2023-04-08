@@ -195,6 +195,7 @@
       document.getElementById('data_source_form_body').hidden = true;
       document.getElementById('data_source_url').value = API_URL_CONFIG.source + getDataSourceEntryURL(systemName);
       document.getElementById('data_source_action').value = action;
+      document.getElementById('data_source_output').value = '';
 
       isProcessing = false;
 
